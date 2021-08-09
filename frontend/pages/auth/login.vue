@@ -21,14 +21,12 @@
         <p class="mw-80 m-t-5">Sign in to your account</p>
         <!-- START Login Form -->
         <form
-          @submit.prevent="login"
+          @submit.prevent="submit"
           id="form-login"
           class="p-t-15"
           role="form"
         >
-          <div class="alert alert-danger mt-3" v-if="errors">
-            <span class="">{{ errors }}</span>
-          </div>
+    
           <!-- START Form Control-->
           <div class="form-group form-group-default">
             <label>Email</label>
@@ -40,6 +38,9 @@
                 class="form-control"
                 required
               />
+              <span class="text-danger" v-if="errors.email">{{
+                errors.email[0]
+              }}</span>
             </div>
           </div>
           <!-- END Form Control-->
@@ -55,6 +56,9 @@
                 placeholder="Credentials"
                 required
               />
+              <span class="text-danger" v-if="errors.password">{{
+                errors.password[0]
+              }}</span>
             </div>
           </div>
           <!-- START Form Control-->
@@ -94,22 +98,22 @@
 <script>
 export default {
   layout: "blank",
-   data: () => ({
-            form: {
-                email: '',
-                password: '',
-            },
-            errors: []
-        }),
-        methods: {
-            async submit() {
-                try {
-                    await this.$axios.$get('sanctum/csrf-cookie')
-                    await this.$auth.loginWith('laravelSanctum', {data: this.form})
-                } catch (error) {
-                    this.errors = error.response.data.errors
-                }
-            }
-        }
+  data: () => ({
+    form: {
+      email: "",
+      password: "",
+    },
+    errors: [],
+  }),
+  methods: {
+    async submit() {
+      try {
+        await this.$axios.$get("sanctum/csrf-cookie");
+        await this.$auth.loginWith("laravelSanctum", { data: this.form });
+      } catch (error) {
+        this.errors = error.response.data.errors;
+      }
+    },
+  },
 };
 </script>
