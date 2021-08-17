@@ -12,7 +12,7 @@
     <div class="">
       <div class="brand inline">
         <img
-          src="assets/img/logo.png"
+          src="~/assets/img/logo.png"
           alt="logo"
           data-src="assets/img/logo.png"
           data-src-retina="assets/img/logo_2x.png"
@@ -265,7 +265,7 @@
             <a href="#" class="dropdown-item">Features</a>
             <a href="#" class="dropdown-item">Help</a>
             <a href="#" class="dropdown-item">Settings</a>
-            <a href="#" class="dropdown-item">Logout</a>
+            <a href="#" @click.prevent="logout" class="dropdown-item">Logout</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item fs-12 hint-text"
               >Last edited by David<br />on Friday at 5:27PM</span
@@ -281,3 +281,13 @@
   </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    logout() {
+      this.$auth.logout()
+    }
+  }
+}
+</script>

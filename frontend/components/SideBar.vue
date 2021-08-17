@@ -1,5 +1,4 @@
 <template>
-  <div>
     <!-- BEGIN SIDEBPANEL-->
     <nav class="page-sidebar" data-pages="sidebar">
       <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
@@ -82,6 +81,13 @@
               <span class="icon-thumbnail"><i class="pg-icon">home</i></span>
             </li>
 
+              <li class="">
+              <NuxtLink to="/calendar" class="detailed">
+                <span class="title">Calendar</span>
+              </NuxtLink>
+              <span class="icon-thumbnail"><i class="pg-icon">calendar</i></span>
+            </li>
+
             <li class="">
               <a href="javascript:;"
                 ><span class="title">Menu Levels</span>
@@ -92,7 +98,7 @@
               >
               <ul class="sub-menu">
                 <li>
-                  <NuxtLink to="#">Level 1</NuxtLink>
+                  <NuxtLink to="/level">Level 1</NuxtLink>
                   <span class="icon-thumbnail"><i class="pg-icon">l1</i></span>
                 </li>
                 <li>
@@ -103,13 +109,13 @@
                   <span class="icon-thumbnail"><i class="pg-icon">L2</i></span>
                   <ul class="sub-menu">
                     <li>
-                      <NuxtLink to="#">Sub Menu</NuxtLink>
+                      <NuxtLink to="/gmap">Googel Map</NuxtLink>
                       <span class="icon-thumbnail"
                         ><i class="pg-icon">sm</i></span
                       >
                     </li>
                     <li>
-                      <NuxtLink to="#">Sub Menu</NuxtLink>
+                      <NuxtLink to="/vmap">Vector mao</NuxtLink>
                       <span class="icon-thumbnail"
                         ><i class="pg-icon">sm</i></span
                       >
@@ -129,5 +135,4 @@
     </nav>
     <!-- END SIDEBAR -->
     <!-- END SIDEBPANEL-->
-  </div>
 </template>

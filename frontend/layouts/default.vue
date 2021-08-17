@@ -15,7 +15,7 @@
           <BreadCrumb />
           <!-- END JUMBOTRON -->
           <!-- START CONTAINER FLUID -->
-          <div class=" container-fluid   container-fixed-lg">
+          <div class="container-fluid sm-padding-10">
 
              <Nuxt />
             <!-- BEGIN PlACE PAGE CONTENT HERE -->

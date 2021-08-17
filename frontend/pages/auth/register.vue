@@ -114,7 +114,7 @@
 
 <script>
 export default {
-  // layout: "blank",
+  layout: "blank",
   data: () => ({
     form: {
       name: "",
